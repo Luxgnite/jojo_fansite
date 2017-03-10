@@ -8,6 +8,19 @@
 
 .navbar {
     background-color: #260547;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav {
+    display: flex;
+    align-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+nav div{
+    /*margin: 5px;*/
 }
 
 /*------------------------------------- Body --------------------------------------*/
