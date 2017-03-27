@@ -7,40 +7,39 @@
 </head>
 <body>
 
-<header>
-    <div class="navbar">
-        <a href="index.html"><img src="images/logo.svg"/></a>
-        <nav>
-            <div><a href="#news">Actualités</a></div>
-            <div>
-                <a href="#characters">Personnages</a>
-                <div class="list-nav"></div>
-            </div>
-            <div><a href="#contact">Contact</a></div>
-        </nav>
-    </div>
-
-    <img src="">
+<header class="flex-row">
+    <a href="index.html"><img src="images/logo.svg" alt="logo"/></a>
+    <nav class="flex-row">
+        <a href="#news">Actualités</a>
+        <a href="#characters">Personnages</a>
+        <div class="list-nav"></div>
+        <a href="#contact">Contact</a>
+    </nav>
 </header>
 
 <main>
-    <div class="container">
+    <div class="flex-col">
+
+        <section id="bandeau" class="flex-container">
+            <h1>Jojo's Bizarre Adventure</h1>
+        </section>
         <section id="news">
             <h2>Actualités</h2>
             <button>Voir toutes les actus</button>
             <div class="merrygoround">
-                <img src="images/giorno.jpg">
+                <img src="images/giorno.jpg" alt="news">
             </div>
         </section>
 
-        <section id="characters">
+        <section id="characters" class="flex-row">
             <div id="chara_details">
-                <img src=""/>
+                <img src="images/characters/part4/josuke4_portrait.jpg" alt="Josuke Higashikata Portrait"/>
                 <em>Higashikata Josuke</em>
                 <p>Age : 16 ans</p>
                 <p>Stand : Crazy Diamond</p>
                 <p>Caractère : Lunatique, Loyal</p>
             </div>
+
             <div>
                 <h2>Personnages principaux de</h2>
                 <select id="list_part" name="jojo_part">
@@ -54,28 +53,40 @@
                     <option value="part8">Jojolion (part 8)</option>
                 </select>
 
+                <div id="gallerie" class="flex-col">
+                    <div class="flex-row"/>
+                    <img src="images/characters/part4/josuke4_portrait.jpg" alt="Josuke Higashikata Portrait"/>
+                    <img src="images/characters/part4/kira_portrait.jpg" alt="Kira Yoshikage Portrait"/>
+                    <img src="images/characters/part4/jotaro4_portrait.jpg" alt="Jotaro Kujo Portrait"/>
+                    <img src="images/characters/part4/okuyasu_portrait.jpg" alt="Okuyasu Nijimura Portrait"/>
+                </div>
 
-                <div id="gallerie">
-                    <img src=""/>
-                    <img src=""/>
-                    <img src=""/>
-                    <img src=""/>
-                    <img src=""/>
-                    <img src=""/>
-                    <img src=""/>
+                <div class="flex-row">
+                    <img src="images/characters/part4/oldjoseph_portrait.jpg" alt="Joseph Joestar Portrait"/>
+                    <img src="images/characters/part4/koichi_portait.jpg" alt="Koichi Hirose Portrait"/>
+                    <img src="images/characters/part4/rohan_portrait.jpg" alt="Rohan Kishibe Portrait"/>
                 </div>
             </div>
-        </section>
+    </section>
 
-        <section id="contact">
+    <section id="contact">
+        <div class="flex-col">
             <h2>Contact</h2>
             <form>
-                <input type="text" name="name" placeholder="Nom"/>
-                <input type="text" name="firstname" placeholder="Prénom"/>
-                <input type="email" name="email" placeholder="jojo@jojo.com"/>
-                <textarea placeholder="Message" name="message"></textarea>
+                <div class="flex-row">
+                    <input type="text" name="name" placeholder="Nom"/>
+                    <input type="text" name="firstname" placeholder="Prénom"/>
+                    <input type="email" name="email" placeholder="jojo@jojo.com"/>
+                </div>
+                <div class="flex-row">
+                    <textarea placeholder="Message" name="message"></textarea>
+                </div>
+                <div class="flex-row">
+                    <input type="submit" value="Envoyer">
+                </div>
             </form>
-        </section>
+        </div>
+    </section>
     </div>
 
 </main>
