@@ -23,12 +23,47 @@
         <section id="bandeau" class="flex-container">
             <h1>Jojo's Bizarre Adventure</h1>
         </section>
+
         <section id="news">
-            <h2>Actualités</h2>
-            <button>Voir toutes les actus</button>
-            <div class="merrygoround">
-                <img src="images/giorno.jpg" alt="news">
+            <div class="flex-col">
+                <div class="flex-row">
+                    <h2>Actualités</h2>
+                    <button>Voir toutes les actus</button>
+                </div>
+
+                <div class="flex-row">
+                    <div id="slide-show">
+                        <button id="prev" class="slider-button"><</button>
+                        <button id="next" class="slider-button">></button>
+                        <div id="slide-stage" style="transform: translate(0,0);">
+                            <figure>
+                                <a href="">
+                                    <img src="images/giorno.jpg" alt="news">
+                                    <figcaption>Jojo's Bizarre Adventure Part 5 finally animated!!</figcaption>
+                                </a>
+                            </figure>
+                            <figure>
+                                <img src="images/giorno.jpg" alt="news">
+                                <figcaption>Jojo's Bizarre Adventure Part 5 finally animated!!</figcaption>
+                            </figure>
+                            <figure>
+                                <img src="images/giorno.jpg" alt="news">
+                                <figcaption>Jojo's Bizarre Adventure Part 5 finally animated!!</figcaption>
+                            </figure>
+                            <figure>
+                                <img src="images/giorno.jpg" alt="news">
+                                <figcaption>Jojo's Bizarre Adventure Part 5 finally animated!!</figcaption>
+                            </figure>
+                            <figure>
+                                <img src="images/giorno.jpg" alt="news">
+                                <figcaption>Jojo's Bizarre Adventure Part 5 finally animated!!</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+
         </section>
 
         <section id="characters" class="flex-row">
@@ -67,26 +102,26 @@
                     <img src="images/characters/part4/rohan_portrait.jpg" alt="Rohan Kishibe Portrait"/>
                 </div>
             </div>
-    </section>
+        </section>
 
-    <section id="contact">
-        <div class="flex-col">
-            <h2>Contact</h2>
-            <form>
-                <div class="flex-row">
-                    <input type="text" name="name" placeholder="Nom"/>
-                    <input type="text" name="firstname" placeholder="Prénom"/>
-                    <input type="email" name="email" placeholder="jojo@jojo.com"/>
-                </div>
-                <div class="flex-row">
-                    <textarea placeholder="Message" name="message"></textarea>
-                </div>
-                <div class="flex-row">
-                    <input type="submit" value="Envoyer">
-                </div>
-            </form>
-        </div>
-    </section>
+        <section id="contact">
+            <div class="flex-col">
+                <h2>Contact</h2>
+                <form>
+                    <div class="flex-row">
+                        <input type="text" name="name" placeholder="Nom"/>
+                        <input type="text" name="firstname" placeholder="Prénom"/>
+                        <input type="email" name="email" placeholder="jojo@jojo.com"/>
+                    </div>
+                    <div class="flex-row">
+                        <textarea placeholder="Message" name="message"></textarea>
+                    </div>
+                    <div class="flex-row">
+                        <input type="submit" value="Envoyer">
+                    </div>
+                </form>
+            </div>
+        </section>
     </div>
 
 </main>
@@ -95,5 +130,7 @@
     <p>JOJO'S BIZARRE ADVENTURE © 1986</p>
     <p>by Hirohiko Araki & LUCKY LAND COMMUNICATIONS/SHUEISHA Inc.</p>
 </footer>
+
+<script src="js/slider.js"></script>
 </body>
 </html>

@@ -1,7 +1,19 @@
 /*----------------------------------- Fonts ---------------------------------------*/
-@font-face { font-family: Souses; src: url('../fonts/Souses.otf'); }
-@font-face { font-family: Yanone; src: url('../fonts/YanoneKaffeesatz-Regular.otf'); }
-@font-face { font-family: Yanone; font-weight: bold; src: url('../fonts/YanoneKaffeesatz-Bold.otf'); }
+@font-face {
+    font-family: Souses;
+    src: url('../fonts/Souses.otf');
+}
+
+@font-face {
+    font-family: Yanone;
+    src: url('../fonts/YanoneKaffeesatz-Regular.otf');
+}
+
+@font-face {
+    font-family: Yanone;
+    font-weight: bold;
+    src: url('../fonts/YanoneKaffeesatz-Bold.otf');
+}
 
 /*------------------------------------ Flex ---------------------------------------*/
 
@@ -14,6 +26,7 @@
     display: flex;
     flex-direction: column;
 }
+
 /*------------------------------------ Navbar -------------------------------------*/
 
 header {
@@ -22,7 +35,7 @@ header {
     top: 0px;
 }
 
-header  img{
+header img {
 
 }
 
@@ -32,7 +45,7 @@ nav {
     flex-wrap: wrap;
 }
 
-nav a{
+nav a {
     font-weight: bold;
     text-decoration: none;
     color: white;
@@ -43,9 +56,10 @@ nav a{
     line-height: 100px;
     padding-left: 20px;
     padding-right: 20px;
+    height: 100%;
 }
 
-nav a:hover{
+nav a:hover {
     text-decoration: none;
     background-color: #390d66;
     color: #eb9602
@@ -57,7 +71,6 @@ header a img {
 }
 
 /*------------------------------------- Body --------------------------------------*/
-
 
 body {
     margin: 0;
@@ -73,23 +86,125 @@ h2 {
 }
 
 #bandeau {
-    background-image:url("../images/front_v2.jpg");
+    background-image: url("../images/front_v2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
-
-
 
 section {
     height: 98vh;
     position: relative;
     overflow: hidden;
 }
+
 /*------------------------------------- News --------------------------------------*/
 
 #news {
     display: flex;
     background-color: #45117e;
+    padding: 50px;
+}
+
+#news > div {
+    width: 100%;
+}
+
+#news > div > div:first-child{
+    width: 100%;
+    justify-content: space-between;
+}
+
+#slide-show {
+    width: 40vw;
+    max-width: 800px;
+    height: 80vh;
+    max-height: 500px;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider-button {
+    background: rgba(0, 0, 0, 0.4);
+    border: none;
+    position: absolute;
+    z-index: 10;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
+    height: 50px;
+    width: 70px;
+    text-align: center;
+    padding-bottom: 0.5%;
+    transition: all 200ms;
+}
+
+.slider-button:hover {
+    background: rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+}
+
+#slide-show #prev {
+    top: 47%;
+
+}
+
+#slide-show #next {
+    top: 47%;
+    right: 0;
+}
+
+#slide-stage {
+    height: 100%;
+    width: 13800px;
+    position: relative;
+    transition: all 500ms ease-out 200ms;
+}
+
+#slide-show figure {
+    height: 100%;
+    width: 40vw;
+    float: left;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+#slide-show img {
+    height: 100%;
+    width: 100%;
+}
+
+#slide-show figcaption {
+    z-index: 10;
+    visibility: hidden;
+    transition: all 200ms;
+    position: absolute;
+    top: 45%;
+    left: 12.5%;
+    text-align: center;
+    font-size: 1.5em;
+    background: none;
+    color: white;
+}
+
+#slide-show:hover figcaption {
+    visibility: visible;
+}
+
+#slide-show::before {
+    content: '';
+    background: rgba(0, 0, 0, 0);
+    transition: all 200ms;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+
+#slide-show:hover::before {
+    background: rgba(0, 0, 0, 0.8);
+    cursor: pointer;
 }
 
 /*----------------------------------- Characters ----------------------------------*/
@@ -123,17 +238,22 @@ section {
     width: 100%;
 }
 
-#contact .flex-row{
+#contact .flex-col {
+    padding: 50px;
+}
+
+#contact .flex-row {
     align-items: center;
     justify-content: center;
     margin-bottom: 30px;
 }
-#contact form{
+
+#contact form {
     margin-left: 10%;
     margin-right: 10%;
 }
 
-#contact form div:first-child input:nth-child(even){
+#contact form div:first-child input:nth-child(even) {
     margin-top: 5px;
     margin-bottom: 5px;
     margin-left: 3%;
@@ -159,7 +279,7 @@ section {
     border: #eb9603 solid 5px;
 }
 
-#contact textarea{
+#contact textarea {
     font-family: Yanone;
     font-size: 1.2em;
     color: white;
@@ -176,11 +296,20 @@ section {
     border: #eb9603 solid 5px;
 }
 
-#contact input[type='submit']{
+#contact input[type='submit'] {
     background-color: #eb9603;
     border: none;
     height: 100px;
     width: 200px;
+    transition: all 200ms;
+}
+
+#contact input[type='submit']:hover {
+    cursor: pointer;
+}
+
+#contact input[type='submit']:active {
+    background-color: #c07303
 }
 
 /*------------------------------------- Footer ------------------------------------*/
