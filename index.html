@@ -4,6 +4,8 @@
     <meta charset="utf-8"/>
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
     <title>Jojo's Bizarre Adventure</title>
+    <script src="js/section_shapes.js"></script>
+    <script src="js/character_select.js"></script>
 </head>
 <body>
 
@@ -25,81 +27,120 @@
         </section>
 
         <section id="news">
-            <div class="flex-col">
-                <div class="flex-row">
-                    <h2>Actualités</h2>
-                    <button>Voir toutes les actus</button>
-                </div>
+            <canvas id="news-canvas"></canvas>
+            <canvas id="news-canvas-shadow"></canvas>
+            <div id="news-wrapper">
+                <div class="flex-col">
+                    <div class="flex-row" id="news-header">
+                        <h2>Actualités</h2>
+                        <button>Voir toutes les actus</button>
+                    </div>
 
-                <div class="flex-row">
-                    <div id="slide-show">
-                        <button id="prev" class="slider-button"><</button>
-                        <button id="next" class="slider-button">></button>
-                        <div id="slide-stage" style="transform: translate(0,0);">
-                            <figure>
-                                <a href="">
-                                    <img src="images/giorno.jpg" alt="news">
-                                    <figcaption>Jojo's Bizarre Adventure Part 5 finally animated!!</figcaption>
-                                </a>
-                            </figure>
-                            <figure>
-                                <img src="images/giorno.jpg" alt="news">
-                                <figcaption>Jojo's Bizarre Adventure Part 5 finally animated!!</figcaption>
-                            </figure>
-                            <figure>
-                                <img src="images/giorno.jpg" alt="news">
-                                <figcaption>Jojo's Bizarre Adventure Part 5 finally animated!!</figcaption>
-                            </figure>
-                            <figure>
-                                <img src="images/giorno.jpg" alt="news">
-                                <figcaption>Jojo's Bizarre Adventure Part 5 finally animated!!</figcaption>
-                            </figure>
-                            <figure>
-                                <img src="images/giorno.jpg" alt="news">
-                                <figcaption>Jojo's Bizarre Adventure Part 5 finally animated!!</figcaption>
-                            </figure>
+                    <div class="flex-row">
+                        <div id="slide-show">
+                            <button id="prev" class="slider-button"><</button>
+                            <button id="next" class="slider-button">></button>
+                            <div id="slide-stage" style="transform: translate(0,0);">
+                                <figure>
+                                    <a href="">
+                                        <img src="images/giorno.jpg" alt="news">
+                                        <figcaption>Jojo's Bizarre Adventure Part 5 finally animated!!</figcaption>
+                                    </a>
+                                </figure>
+                                <figure>
+                                    <a href="">
+                                        <img src="images/giorno.jpg" alt="news">
+                                        <figcaption>Jojo's Bizarre Adventure Part 5 finally animated!!</figcaption>
+                                    </a>
+                                </figure>
+                                <figure>
+                                    <a href="">
+                                        <img src="images/giorno.jpg" alt="news">
+                                        <figcaption>Jojo's Bizarre Adventure Part 5 finally animated!!</figcaption>
+                                    </a>
+                                </figure>
+                                <figure>
+                                    <a href="">
+                                        <img src="images/giorno.jpg" alt="news">
+                                        <figcaption>Jojo's Bizarre Adventure Part 5 finally animated!!</figcaption>
+                                    </a>
+                                </figure>
+                                <figure>
+                                    <a href="">
+                                        <img src="images/giorno.jpg" alt="news">
+                                        <figcaption>Jojo's Bizarre Adventure Part 5 finally animated!!</figcaption>
+                                    </a>
+                                </figure>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-
         </section>
 
         <section id="characters" class="flex-row">
-            <div id="chara_details">
-                <img src="images/characters/part4/josuke4_portrait.jpg" alt="Josuke Higashikata Portrait"/>
-                <em>Higashikata Josuke</em>
-                <p>Age : 16 ans</p>
-                <p>Stand : Crazy Diamond</p>
-                <p>Caractère : Lunatique, Loyal</p>
+            <canvas id="chara-canvas"></canvas>
+            <div id="chara_details" class="flex-col">
+                <div class="flex-row">
+                    <figure>
+                        <img src="images/characters/part4/josuke4_portrait.jpg" alt="Josuke Higashikata Portrait"/>
+                    </figure>
+                    <em>Higashikata Josuke</em>
+                </div>
+                <div class="flex-col">
+                    <p>Age : 16 ans</p>
+                    <p>Stand : Crazy Diamond</p>
+                    <p>Caractère : Lunatique, Loyal</p>
+                </div>
             </div>
 
-            <div>
-                <h2>Personnages principaux de</h2>
-                <select id="list_part" name="jojo_part">
-                    <option value="part1">Phantom Blood (part 1)</option>
-                    <option value="part2">Battle Tendency (part 2)</option>
-                    <option value="part3">Stardust Crusaders (part 3)</option>
-                    <option value="part4" selected>Diamond is Unbreakable (part 4)</option>
-                    <option value="part5">Golden Wind (part 5)</option>
-                    <option value="part6">Stone Ocean (part 6)</option>
-                    <option value="part7">Steel Ball Run (part 7)</option>
-                    <option value="part8">Jojolion (part 8)</option>
-                </select>
-
-                <div id="gallerie" class="flex-col">
-                    <div class="flex-row"/>
-                    <img src="images/characters/part4/josuke4_portrait.jpg" alt="Josuke Higashikata Portrait"/>
-                    <img src="images/characters/part4/kira_portrait.jpg" alt="Kira Yoshikage Portrait"/>
-                    <img src="images/characters/part4/jotaro4_portrait.jpg" alt="Jotaro Kujo Portrait"/>
-                    <img src="images/characters/part4/okuyasu_portrait.jpg" alt="Okuyasu Nijimura Portrait"/>
+            <div id="characters-wrapper" class="flex-col">
+                <div class="flex-col" id="header-chara">
+                    <h2>Personnages principaux de</h2>
+                    <select name="jojo_part">
+                        <option value="part1">Phantom Blood (part 1)</option>
+                        <option value="part2">Battle Tendency (part 2)</option>
+                        <option value="part3">Stardust Crusaders (part 3)</option>
+                        <option value="part4" selected>Diamond is Unbreakable (part 4)</option>
+                        <option value="part5">Golden Wind (part 5)</option>
+                        <option value="part6">Stone Ocean (part 6)</option>
+                        <option value="part7">Steel Ball Run (part 7)</option>
+                        <option value="part8">Jojolion (part 8)</option>
+                    </select>
                 </div>
 
-                <div class="flex-row">
-                    <img src="images/characters/part4/oldjoseph_portrait.jpg" alt="Joseph Joestar Portrait"/>
-                    <img src="images/characters/part4/koichi_portait.jpg" alt="Koichi Hirose Portrait"/>
-                    <img src="images/characters/part4/rohan_portrait.jpg" alt="Rohan Kishibe Portrait"/>
+
+                <div id="gallerie" class="flex-row">
+                    <div class="flex-col">
+                        <figure data-chara="0">
+                            <img src="images/characters/part4/josuke4_portrait.jpg" alt="Josuke Higashikata Portrait"/>
+                        </figure>
+                        <figure data-chara="4">
+                            <img src="images/characters/part4/oldjoseph_portrait.jpg" alt="Joseph Joestar Portrait"/>
+                        </figure>
+                    </div>
+                    <div class="flex-col">
+                        <figure data-chara="1">
+                            <img src="images/characters/part4/kira_portrait.jpg" alt="Kira Yoshikage Portrait"/>
+                        </figure>
+                        <figure data-chara="5">
+                            <img src="images/characters/part4/koichi_portait.jpg" alt="Koichi Hirose Portrait"/>
+                        </figure>
+                    </div>
+                    <div class="flex-col">
+                        <figure data-chara="2">
+                            <img src="images/characters/part4/jotaro4_portrait.jpg" alt="Jotaro Kujo Portrait"/>
+                        </figure>
+                        <figure data-chara="6">
+                            <img src="images/characters/part4/rohan_portrait.jpg" alt="Rohan Kishibe Portrait"/>
+                        </figure>
+                    </div>
+                    <div class="flex-col">
+                        <figure data-chara="3">
+                            <img src="images/characters/part4/okuyasu_portrait.jpg" alt="Okuyasu Nijimura Portrait"/>
+                        </figure>
+                    </div>
                 </div>
             </div>
         </section>

@@ -82,38 +82,92 @@ body {
 
 h2 {
     font-family: Souses;
-    font-size: 30pt;
+    font-size: 38pt;
 }
 
 #bandeau {
+
+
+}
+
+main {
     background-image: url("../images/front_v2.jpg");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100%;
 }
 
 section {
-    height: 98vh;
     position: relative;
     overflow: hidden;
+    z-index: 1;
+    border: none;
+    min-height: 98vh;
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+
+/*----------------------------------- Bandeau ------------------------------------*/
+
+#bandeau h1 {
+    float: right;
+    margin: 20% 5% 0 0;
+    font-size: 2.5em;
+    font-family: Souses;
+    color: #eb9602;
+    text-shadow: 6px 8px #260547;
 }
 
 /*------------------------------------- News --------------------------------------*/
 
+#news-canvas-shadow {
+    z-index: -2;
+    top: 1px;
+}
+
 #news {
     display: flex;
-    background-color: #45117e;
-    padding: 50px;
+    background: none;
+    position: relative;
+    margin-left: 15%;
+}
+
+#news-wrapper{
+    margin-left: 10%;
 }
 
 #news > div {
     width: 100%;
 }
 
-#news > div > div:first-child{
+#news-wrapper > div > div:first-child{
     width: 100%;
     justify-content: space-between;
 }
 
+#news-header button {
+    font-family: Yanone;
+    font-size: 1.2em;
+    background: none;
+    border: none;
+    color: white;
+    transition: all 200ms;
+}
+
+#news-header button:hover{
+    background: #260547;
+    color: #eb9602;
+    cursor: pointer;
+
+}
+
+#news-wrapper div>div:nth-child(2) {
+justify-content: center;
+}
+/*------------------------------------ Slider --------------------------------------*/
 #slide-show {
     width: 40vw;
     max-width: 800px;
@@ -139,7 +193,7 @@ section {
 }
 
 .slider-button:hover {
-    background: rgba(0, 0, 0, 0.8);
+    background: #ba7a0b;
     cursor: pointer;
 }
 
@@ -176,7 +230,7 @@ section {
 
 #slide-show figcaption {
     z-index: 10;
-    visibility: hidden;
+    opacity: 0;
     transition: all 200ms;
     position: absolute;
     top: 45%;
@@ -185,13 +239,14 @@ section {
     font-size: 1.5em;
     background: none;
     color: white;
+    width: 80%;
 }
 
-#slide-show:hover figcaption {
-    visibility: visible;
+#slide-show a:hover figcaption {
+    opacity: 1;
 }
 
-#slide-show::before {
+#slide-show a::before {
     content: '';
     background: rgba(0, 0, 0, 0);
     transition: all 200ms;
@@ -202,20 +257,143 @@ section {
     z-index: 1;
 }
 
-#slide-show:hover::before {
+#slide-show a:hover::before {
     background: rgba(0, 0, 0, 0.8);
     cursor: pointer;
 }
 
 /*----------------------------------- Characters ----------------------------------*/
 
+#chara_details {
+    width: 40%;
+    padding: 60px 0 0 20px;
+}
+
+#chara_details div:first-child {
+    align-items: center;
+    justify-content: space-around;
+}
+
+#chara_details div:nth-child(2){
+    padding-left: 10px;
+    width: 50%;
+    height: 100%;
+    flex-wrap: wrap;
+    font-size: 1.3em;
+}
+
+#chara_details div:nth-child(2) p {
+    margin: 20px 0;
+}
+
+#chara_details figure {
+    position: relative;
+}
+
+#chara_details figure::after{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: url('../images/focus_portrait.png') no-repeat;
+    background-size: contain;
+    top: 18%;
+    left: 15%;
+    z-index: -1;
+}
+
+#chara_details img {
+    max-height: 200px;
+    max-width: 200px;
+}
+
+#chara_details em {
+    color: #eb9602;
+    font-weight: bold;
+    font-size: 1.7em;
+    font-style: normal;
+}
+
 #characters {
     display: flex;
 }
 
-#gallerie img {
-    height: 50px;
-    width: 50px;
+#characters-wrapper {
+    height: 100%;
+    width: 100%;
+    margin-left: 10%;
+}
+
+#header-chara{
+    margin-left: auto;
+}
+
+#header-chara h2{
+    margin-right: 50px;
+}
+
+#characters-wrapper select{
+    appearance: none;
+    color: white;
+    background-color: #eb9603;
+    border: none;
+    font-family: Yanone;
+    font-size: 1.5em;
+    width: 80%;
+    padding: 10px;
+    margin-left: auto;
+}
+
+#characters-wrapper option {
+    border: none;
+}
+
+#gallerie {
+    height: 100vh;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+#gallerie div{
+    position: absolute;
+    padding: 0 20px;
+}
+
+#gallerie figure{
+    max-height: 150px;
+    max-width: 150px;
+    margin: 20px;
+    transition: all 200ms;
+    position: relative;
+}
+
+#gallerie figure:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+#gallerie figure::after{
+    content: '';
+    position: absolute;
+    top: 18%;
+    left: 15%;
+    z-index: -1;
+    background: none;
+    height: 100%;
+    width: 100%;
+}
+
+#gallerie figure:hover::after{
+    background: url('../images/hover-selector.png') no-repeat;
+    background-size: contain;
+}
+
+#gallerie figure img{
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    position: relative;
 }
 
 /*------------------------------------ Contact ------------------------------------*/
@@ -236,6 +414,7 @@ section {
     position: relative;
     background-color: rgba(35, 5, 65, 0.8);
     width: 100%;
+    z-index: auto;
 }
 
 #contact .flex-col {
